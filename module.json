@@ -5,10 +5,15 @@
   "description": "Holds initialization files.",
   "content": [
     {
-      "type": "path",
-      "value": "out\\artifacts\\Scaffold_Init_jar\\Scaffold-Init.jar"
+      "type": "url",
+      "value": "https://github.com/SirMathhman/Scaffold-Init/releases/download/0.1/Scaffold-Init.jar"
     }
   ],
-  "dependencies": [],
-  "install": ["java -jar modules\\scaffold-init\\out\\artifacts\\Scaffold_Init_jar\\Scaffold-Init.jar"]
+  "dependencies": [
+    {
+      "type": "url",
+      "value": "https://github.com/SirMathhman/Scaffold-JAR/releases/download/0.1/module.json"
+    }
+  ],
+  "install": ["java -jar modules\\scaffold-init\\SirMathhman\\Scaffold-Init\\releases\\download\\0.1\\Scaffold-Init.jar"]
 }

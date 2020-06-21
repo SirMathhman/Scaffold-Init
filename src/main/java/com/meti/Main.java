@@ -1,7 +1,6 @@
 package com.meti;
 
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -20,7 +19,7 @@ public class Main {
             Path test = source.resolve("test");
             createDirectories(test.resolve(JAVA));
             createDirectories(test.resolve(RESOURCES));
-            createDirectories(Paths.get(".", "out"));
+            createDirectories(Paths.get(".", "target"));
         } catch (IOException e) {
             e.printStackTrace();
         }
