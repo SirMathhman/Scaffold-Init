@@ -6,7 +6,7 @@
   "content": [
     {
       "type": "url",
-      "value": "https://github.com/SirMathhman/Scaffold-Init/releases/download/0.1/Scaffold-Init.jar"
+      "value": "https://github.com/SirMathhman/Scaffold-Init/releases/download/0.2/default.jar"
     }
   ],
   "dependencies": [
@@ -15,5 +15,5 @@
       "value": "https://github.com/SirMathhman/Scaffold-JAR/releases/download/0.1/module.json"
     }
   ],
-  "install": ["java -jar modules\\scaffold-init\\SirMathhman\\Scaffold-Init\\releases\\download\\0.1\\Scaffold-Init.jar"]
+  "install": ["java -jar modules\\scaffold-init\\SirMathhman\\Scaffold-Init\\releases\\download\\0.2\\default.jar"]
 }
