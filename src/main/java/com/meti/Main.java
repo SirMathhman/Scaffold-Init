@@ -3,29 +3,44 @@ package com.meti;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import static java.nio.file.Files.*;
+import static java.nio.file.Files.createDirectory;
+import static java.nio.file.Files.exists;
+import static java.text.MessageFormat.format;
 
-public class Main {
-    public static final String RESOURCES = "resources";
-    public static final String JAVA = "java";
-    private static final Path source = Paths.get(".", "src");
+public final class Main {
+	public static final Logger logger = Logger.getLogger("Scaffold-Init");
 
-    public void run() {
-        try {
-            Path main = source.resolve("main");
-            createDirectories(main.resolve(JAVA));
-            createDirectories(main.resolve(RESOURCES));
-            Path test = source.resolve("test");
-            createDirectories(test.resolve(JAVA));
-            createDirectories(test.resolve(RESOURCES));
-            createDirectories(Paths.get(".", "target"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	private Main() {
+	}
 
-    public static void main(String[] args) {
-        new Main().run();
-    }
+	public static void main(String[] args) {
+		run();
+	}
+
+	private static void run() {
+		Path src = ensure(Paths.get(".", "src"));
+		Path main = ensure(src.resolve("main"));
+		ensure(main.resolve("java"));
+		ensure(main.resolve("resources"));
+		Path test = ensure(src.resolve("test"));
+		ensure(test.resolve("java"));
+		ensure(test.resolve("resources"));
+		ensure(Paths.get(".", "target"));
+	}
+
+	private static Path ensure(Path source) {
+		logger.log(Level.INFO, format("{0} exists? {1}", source, exists(source)));
+		if (!exists(source)) {
+			logger.log(Level.INFO, String.format("%s will be created.", source));
+			try {
+				createDirectory(source);
+			} catch (IOException e) {
+				logger.log(Level.WARNING, String.format("Failed to create %s", source), e);
+			}
+		}
+		return source;
+	}
 }
