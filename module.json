@@ -10,5 +10,5 @@
     }
   ],
   "dependencies": [],
-  "install": []
+  "install": ["java -jar modules\\scaffold-init\\out\\artifacts\\Scaffold_Init_jar\\Scaffold-Init.jar"]
 }
