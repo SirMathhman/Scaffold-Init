@@ -1,0 +1,14 @@
+{
+  "group": "com.meti",
+  "name": "scaffold-init",
+  "version": "0.1",
+  "description": "Holds initialization files.",
+  "content": [
+    {
+      "type": "path",
+      "value": "out\\artifacts\\Scaffold_Init_jar\\Scaffold-Init.jar"
+    }
+  ],
+  "dependencies": [],
+  "install": []
+}
